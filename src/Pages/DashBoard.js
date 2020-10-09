@@ -7,7 +7,7 @@ import ViewCarouselIcon from "@material-ui/icons/ViewCarousel";
 import InputBase from "@material-ui/core/InputBase";
 import React from "react";
 import clsx from "clsx";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { makeStyles} from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import Paper from "@material-ui/core/Paper";
 import NotificationsIcon from "@material-ui/icons/Notifications";
@@ -49,7 +49,10 @@ const useStyles = makeStyles((theme) => ({
       duration: theme.transitions.duration.leavingScreen,
     }),
   },
-
+  icon: {
+    color: 'white',
+  }
+,
   appBarShift: {
     width: `calc(100% - ${drawerWidth}px)`,
     marginLeft: drawerWidth,
@@ -144,34 +147,7 @@ const useStyles = makeStyles((theme) => ({
     // width: "371px!important",
     // height: "602px!important",
   },
-  user: {
-    width: "371px!important",
-    height: "602px!important",
-  },
-  statistics: {
-    top: "168px!important",
-    left: "335px!important",
-    width: "370px!important",
-    height: "439px!important",
-  },
-  pie: {
-    top: "168px!important",
-    left: "735px!important",
-    width: "369px!important",
-    height: "439px!important",
-  },
-  table: {
-    top: 637,
-    left: 336,
-    width: 770,
-    height: 422,
-  },
-  video: {
-    top: 801,
-    left: 1138,
-    width: 371,
-    height: 258,
-  },
+ 
 
   content: {
     flexGrow: 1,
@@ -219,7 +195,6 @@ export default function DashBoard() {
             aria-label="open drawer"
             onClick={handleDrawerOpen}
             edge="start"
-            //  className={clsx(classes.menuButton, open && classes.hide)}
           >
             <NotesIcon />
           </IconButton>
@@ -271,28 +246,28 @@ export default function DashBoard() {
       >
         <Divider />
         <List
-          subheader={<ListSubheader color="inherit">Impekable</ListSubheader>}
+          subheader={<ListSubheader color="inherit">I m p e k a b l e</ListSubheader>}
         >
           <ListItem button key="Home">
-            <ListItemIcon>
+            <ListItemIcon className={classes.icon}>
               <HomeOutlined />{" "}
             </ListItemIcon>
             <ListItemText primary="Home" />
           </ListItem>
           <ListItem button>
-            <ListItemIcon>
+            <ListItemIcon className={classes.icon}>
               <SignalCellularAltIcon />
             </ListItemIcon>
             <ListItemText primary="Dashboard" />
           </ListItem>
           <ListItem button>
-            <ListItemIcon>
+            <ListItemIcon className={classes.icon}>
               <MailIcon />{" "}
             </ListItemIcon>
             <ListItemText primary="Inbox" />
           </ListItem>
           <ListItem button>
-            <ListItemIcon>
+            <ListItemIcon className={classes.icon}>
               <ViewCarouselIcon />
             </ListItemIcon>
             <ListItemText primary="Products" />
@@ -343,7 +318,10 @@ export default function DashBoard() {
                 </Paper>
               </Grid>
               <Grid item xs={12}>
-                <ReferrerTable />
+              <Paper className={classes.paper}>
+              <ReferrerTable />
+                </Paper>
+               
               </Grid>
             </Grid>
 

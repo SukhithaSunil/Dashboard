@@ -68,7 +68,7 @@ export default function UsersCard() {
       </CardContent>
       <Divider />
 
-      <CardHeader
+      <CardHeader style ={{textAlign:"left"}}
         title="Our Users"
         action={
           <IconButton aria-label="settings">
